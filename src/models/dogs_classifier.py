@@ -4,7 +4,6 @@ import torch
 from torch import nn 
 from torch.nn import functional as F
 from torchmetrics import Accuracy
-
 from typing import Dict
 
 class DogsBreedClassifier(pl.LightningModule):
@@ -58,6 +57,7 @@ class DogsBreedClassifier(pl.LightningModule):
         self.log("val/acc",self.valid_acc,prog_bar=True,on_epoch=True,on_step=True)
         return loss 
     
+
     def test_step(self,batch,batch_idx ) -> torch.Tensor:
         x,y = batch 
         logits = self(x)
@@ -85,3 +85,4 @@ class DogsBreedClassifier(pl.LightningModule):
             "lr_scheduler":scheduler,
             "monitor":"train/loss_epoch"
         }
+    
