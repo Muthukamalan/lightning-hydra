@@ -4,7 +4,13 @@
 - [X] ~pyproject.toml~ requirements.txt
 - [X] Dockerfile
 - [X] .devcontainer
-- [ ] codecov
+- [X] pytest 
+```
+    npx http-server .
+
+    https://about.codecov.io/
+```
+- [X] codecov  WIP
 - [ ] Docker Image to GHCR
 - [ ] fail if accuracy<.95 
 - [ ] store artifact
