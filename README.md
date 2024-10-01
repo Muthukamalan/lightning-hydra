@@ -3,7 +3,7 @@
 # TODO:
 - [X] ~pyproject.toml~ requirements.txt
 - [X] Dockerfile
-- [ ] .devcontainer
+- [X] .devcontainer
 - [ ] codecov
 - [ ] Docker Image to GHCR
 - [ ] fail if accuracy<.95 
