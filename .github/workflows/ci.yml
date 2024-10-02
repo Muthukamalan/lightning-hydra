@@ -30,7 +30,7 @@ jobs:
       run: pip install -r requirements.txt
 
     - name: run pytest
-      run: pytest --conv=tests/
+      run: pytest --cov=tests/
 
     - name: Run tests with coverage
       run: |
