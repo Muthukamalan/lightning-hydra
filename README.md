@@ -10,8 +10,8 @@
 
     https://about.codecov.io/
 ```
-- [X] codecov  WIP
-- [ ] Docker Image to GHCR
+- [X] codecov  
+- [X] Docker Image to GHCR
 - [ ] fail if accuracy<.95 
 - [ ] store artifact
 
