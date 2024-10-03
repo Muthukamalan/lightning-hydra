@@ -74,12 +74,13 @@ class DogsBreedClassifier(pl.LightningModule):
                                     lr=self.hparams.lr,
                                     weight_decay=self.hparams.weight_decay
                     )
-        scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(
-                        optimizer=optimizer,
-                        factor=self.hparams.scheduler_factor,
-                        patience=self.hparams.scheduler_patience,
-                        min_lr=self.hparams.min_lr
-        )
+        # scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(
+        #                 optimizer=optimizer,
+        #                 factor=self.hparams.scheduler_factor,
+        #                 patience=self.hparams.scheduler_patience,
+        #                 min_lr=self.hparams.min_lr
+        # )
+        scheduler = torch.optim.lr_scheduler.OneCycleLR(optimizer=optimizer,total_steps=self.trainer.estimated_stepping_batches,max_lr=self.hparams.lr*10)
         return {
             "optimizer":optimizer,
             "lr_scheduler":scheduler,

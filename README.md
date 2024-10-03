@@ -5,11 +5,6 @@
 - [X] Dockerfile
 - [X] .devcontainer
 - [X] pytest 
-```
-    npx http-server .
-
-    https://about.codecov.io/
-```
 - [X] codecov  
 - [X] Docker Image to GHCR
 - [ ] fail if accuracy<.95 
@@ -84,12 +79,23 @@ python src/train.py data.batch_size:64 model.pretrained=false trainer.max_epochs
 python src/inference.py --ckpt_path=/path/model.ckpt --input_folder=/home/path_folder --output_folder=/home/path_folder
 ```
 
+# pytest
+- generate xml report for code coverage
+```sh
+coverage run -m pytest
+coverage xml -o coverage.xml
+pytest --cov --cov-report=xml
+```
+
 
 # Tensorboard logs
 ```sh
-tensorboard --logdir outputs/ --load_fast=false
+tensorboard --logdir outputs/ --load_fast=false 
 ```
 
-```website
-http://localhost:6006/
-```
+
+# Reports
+- ![Training Details](./reports/train-report.png)
+- ![Testing  Details](./reports/test-report.png)
+- ![Validation Details](./reports/val-report.png)
+- ![learning reate](./reports/lr-Adam.png)

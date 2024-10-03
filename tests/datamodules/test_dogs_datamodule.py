@@ -34,12 +34,8 @@ def test_dogsbread_data_setup(datamodule):
     assert datamodule.test_dataset is not None
     assert datamodule.validation_dataset is not None
 
-    total_size = (
-        len(datamodule.train_dataset)
-        + len(datamodule.test_dataset)
-        + len(datamodule.validation_dataset)
-    )
-
+    assert len(datamodule.train_dataset) > len(datamodule.test_dataset)
+    assert len(datamodule.train_dataset) > len(datamodule.validation_dataset)
 
 
 def test_dogsbread_dataloaders(datamodule):
