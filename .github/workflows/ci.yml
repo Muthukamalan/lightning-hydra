@@ -21,6 +21,9 @@ env:
 jobs:
 
   test:
+    env:
+      username: ${{ secrets.USERNAME }}
+      key: ${{ secrets.KEY }}
     runs-on: ubuntu-latest
     
     steps:

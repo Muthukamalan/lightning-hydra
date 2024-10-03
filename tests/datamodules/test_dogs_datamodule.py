@@ -34,6 +34,11 @@ def test_dogsbread_data_setup(datamodule):
     assert datamodule.test_dataset is not None
     assert datamodule.validation_dataset is not None
 
+
+
+def test_prepare_data(datamodule):
+    datamodule.prepare_data()
+    datamodule.setup()
     assert len(datamodule.train_dataset) > len(datamodule.test_dataset)
     assert len(datamodule.train_dataset) > len(datamodule.validation_dataset)
 
