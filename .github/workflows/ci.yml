@@ -34,7 +34,7 @@ jobs:
       
 
     - name: save artifact
-      uses: acrions/upload-artifact@v3
+      uses: actions/upload-artifact@v3
       with:
         name: artifacts
         path: |
