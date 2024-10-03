@@ -31,16 +31,15 @@ jobs:
 
     - name: RUN finetune script
       run: python src/train.py experiment=finetune
+      
+
+    - name: save artifact
+      uses: acrions/upload-artifact@v3
       with:
         name: loguru-logs
         path: logs
         name: checkpoint-outputs
         path: outputs/*/*/checkpoints/*.ckpt
-
-    - name: save artifact
-      uses: acrions/upload-artifact@v3
-      with:
-        logs
 
     - name: run pytest
       run: pytest --cov=tests/
