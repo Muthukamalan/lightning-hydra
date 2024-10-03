@@ -26,7 +26,13 @@ jobs:
       key: ${{ secrets.KEY }}
     runs-on: ubuntu-latest
     
+
     steps:
+    - name: checking kaggle key as env secrets
+      run: |
+        echo "username: ${{ env.USERNAME }}"
+        echo "key: ${{ env.KEY }}"
+
     - uses: actions/checkout@v4
 
     - name: Set requirements
