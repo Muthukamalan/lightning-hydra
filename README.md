@@ -8,7 +8,12 @@
 - [X] codecov  
 - [X] Docker Image to GHCR
 - [ ] fail if accuracy<.95 
-- [ ] store artifact
+- [X] store artifact
+- [X] added dvc
+- [X] sample inference
+- [X] added vit model
+- [X] comet logs
+- [ ] badge
 
 ### [Dogs Dataset](https://www.kaggle.com/datasets/khushikhushikhushi/dog-breed-image-dataset)
 In Order to run program successfully, modification `.env` file
