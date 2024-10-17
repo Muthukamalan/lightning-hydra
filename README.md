@@ -1,4 +1,5 @@
-# Dosg Bread Classifier
+# Dosg Bread Classifier   
+[![Python CI/CD application](https://github.com/Muthukamalan/lightning-hydra/actions/workflows/ci.yml/badge.svg)](https://github.com/Muthukamalan/lightning-hydra/actions/workflows/ci.yml)
 
 # TODO:
 - [X] ~pyproject.toml~ requirements.txt
