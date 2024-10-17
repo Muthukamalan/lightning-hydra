@@ -1,0 +1,7 @@
+
+
+
+tensorboard:
+  _target_: lightning.pytorch.loggers.CometLogger
+  save_dir: "${paths.output_dir}/comet/"
+  api_key: "321pFOO6nAUDWW21p1SAkAbQc"

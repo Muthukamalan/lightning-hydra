@@ -1,0 +1,12 @@
+stages:
+  train:
+    cmd: python src/train.py logger=comet
+    deps:
+    - configs/experiment/finetune.yaml
+    - src/train.py
+    - data/
+    outs:
+    - logs:
+        cache: false
+    - outputs:
+        cache: false
