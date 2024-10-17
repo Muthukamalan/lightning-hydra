@@ -1,0 +1,6 @@
+outs:
+- md5: d9a0ebdf02a9496f74b6b72782299bd7.dir
+  size: 4024458
+  nfiles: 967
+  hash: md5
+  path: dogs_dataset
