@@ -14,7 +14,7 @@
 - [X] sample inference
 - [X] added vit model
 - [X] comet logs
-- [ ] badge
+- [X] badge
 
 ### [Dogs Dataset](https://www.kaggle.com/datasets/khushikhushikhushi/dog-breed-image-dataset)
 In Order to run program successfully, modification `.env` file
