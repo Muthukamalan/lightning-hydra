@@ -157,3 +157,10 @@ COMET INFO: Uploading 1 metrics, params and output messages
 [2024-10-17 21:03:17,973][__main__][INFO] - Test metrics:
 [{'test/loss_epoch': 0.17024929821491241, 'test/acc_epoch': 0.9595959782600403}]
 ```
+
+
+
+# Docker-compose
+```sh
+docker compose up
+```

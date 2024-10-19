@@ -1,0 +1,53 @@
+jobs:
+  test:
+
+
+on: push
+
+permissions:
+  contents: read
+
+
+
+
+env:
+  REGISTRY: ghcr.io
+  IMAGE_NAME: ${{ github.repository }}
+
+
+# groups set of actions that needs to execute
+jobs:
+
+  test:
+    env:
+      username: ${{ secrets.USERNAME }}
+      key: ${{ secrets.KEY }}
+    runs-on: ubuntu-latest
+    
+
+    steps:
+    - name: checking kaggle key as env secrets
+      run: |
+        echo "username: ${{ env.USERNAME }}"
+        echo "key: ${{ env.KEY }}"
+
+    - uses: actions/checkout@v4
+    - uses: iterative/setup-dvc@v1
+
+    - name: Set requirements
+      run: pip install -r requirements.txt
+
+
+    # Pull data from DVC
+    - name: Pull data from DVC
+      env:
+        GDRIVE_CREDENTIALS_DATA: ${{ secrets.GDRIVE_CREDENTIALS_DATA }}
+      run: |
+        dvc pull
+
+
+    # Train the model using DVC
+    - name: Train model
+      run: |
+        dvc repro
+

@@ -1,0 +1,45 @@
+
+services:
+  train:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./logs:/code/logs
+      - ./outputs:/code/outputs
+      - ./data:/code/data      
+    environment:
+      - PYTHONPATH=/code
+      - PYTHONUNBUFFERED=1
+    command: python src/train.py 
+
+  infer:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./logs:/code/logs
+      - ./samples:/code/samples      
+      - ./outputs:/code/outputs
+      - ./data:/code/data 
+
+    environment:
+      - PYTHONPATH=/code
+      - PYTHONUNBUFFERED=1
+    command: python src/infer.py 
+    depends_on:
+      - train  
+
+    
+  testing:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./cov_html:/code/cov_html  # Mount a volume forS coverage reports       
+    environment:
+      - PYTHONPATH=/code
+      - PYTHONUNBUFFERED=1
+    command: 
+      sh -c "pytest --cov=tests/ &&
+             pytest -v --maxfail=1 --disable-warnings --cov --cov-report=xml"
