@@ -33,7 +33,7 @@ class DogsBreedClassifier(pl.LightningModule):
         self.valid_acc:Accuracy = Accuracy(task='multiclass',num_classes=self.hparams.num_classes)
 
 
-    def forward(self, x:torch.Tensor) -> torch.Any:
+    def forward(self, x:torch.Tensor):
         return self.model(x)
     
     def training_step(self, batch,batch_idx) -> torch.Tensor:
