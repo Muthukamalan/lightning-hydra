@@ -9,7 +9,7 @@ accelerator: auto
 devices: 1
 
 # mixed precision for extra speed-up
-# precision: 16
+precision: 16
 
 # perform a validation loop every N training epochs
 check_val_every_n_epoch: 3
@@ -17,3 +17,8 @@ check_val_every_n_epoch: 3
 # set True to to ensure deterministic results
 # makes training slower but gives more reproducibility than just setting seeds
 deterministic: False
+
+
+
+# limit trainer bacth size
+limit_train_batches: 0.1

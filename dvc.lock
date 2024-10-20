@@ -1,7 +1,7 @@
 schema: '2.0'
 stages:
   train:
-    cmd: python src/train.py logger=comet model.model_name=vit_tiny_patch16_224
+    cmd: python src/train.py logger=csv model.model_name=vit_tiny_patch16_224
     deps:
     - path: configs/experiment/finetune.yaml
       hash: md5
@@ -19,11 +19,11 @@ stages:
     outs:
     - path: logs
       hash: md5
-      md5: 631dda25b001355c9cd179334995640c.dir
+      md5: 91aee4e302314af712263cbc027d994a.dir
       size: 354
-      nfiles: 2
+      nfiles: 1
     - path: outputs
       hash: md5
-      md5: f6ffef5de7864cda6f99b8903eb6ca71.dir
-      size: 134335514
-      nfiles: 12
+      md5: 3680affa20b90492fb8b3d0ea546b9d2.dir
+      size: 66517257
+      nfiles: 7

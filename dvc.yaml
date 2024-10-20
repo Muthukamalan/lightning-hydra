@@ -1,6 +1,6 @@
 stages:
   train:
-    cmd: python src/train.py logger=comet model.model_name=vit_tiny_patch16_224
+    cmd: python src/train.py logger=csv model.model_name=vit_tiny_patch16_224
     deps:
     - configs/experiment/finetune.yaml
     - src/train.py

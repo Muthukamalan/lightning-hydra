@@ -1,8 +1,12 @@
 jobs:
   test:
 
+# events 
+on:
+  # push to main
+  push:
+    branches: [ "dvc" ]
 
-on: push
 
 permissions:
   contents: read
@@ -51,3 +55,5 @@ jobs:
       run: |
         dvc repro
 
+    - name: success
+      run: echo "success"
