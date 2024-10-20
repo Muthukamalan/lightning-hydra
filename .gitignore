@@ -3,3 +3,4 @@ dogs_dataset/
 logs/
 outputs/
 __pycache__/
+/logs

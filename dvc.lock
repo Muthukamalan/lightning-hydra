@@ -1,0 +1,29 @@
+schema: '2.0'
+stages:
+  train:
+    cmd: python src/train.py logger=csv model.model_name=vit_tiny_patch16_224
+    deps:
+    - path: configs/experiment/finetune.yaml
+      hash: md5
+      md5: 38971319297fbb8dbd36dcd79cd6a1a5
+      size: 581
+    - path: data/
+      hash: md5
+      md5: 76817c5c640164db8f071b7c4b6d8f09.dir
+      size: 4024585
+      nfiles: 970
+    - path: src/train.py
+      hash: md5
+      md5: 607a24b03917c6396769ff95f88ad418
+      size: 3559
+    outs:
+    - path: logs
+      hash: md5
+      md5: 91aee4e302314af712263cbc027d994a.dir
+      size: 354
+      nfiles: 1
+    - path: outputs
+      hash: md5
+      md5: 3680affa20b90492fb8b3d0ea546b9d2.dir
+      size: 66517257
+      nfiles: 7

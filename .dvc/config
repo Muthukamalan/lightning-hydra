@@ -1,0 +1,9 @@
+[core]
+    analytics = false
+    autostage = true
+['remote "myremote"']
+    url = gdrive://1ToBtZkTPmNOOQemLuZXDTqkICRkqeroD
+    gdrive_acknowledge_abuse = true
+    gdrive_client_id = 434326667257-jt40spgh6clhvovsmmaot0jl37mva25o.apps.googleusercontent.com
+    gdrive_client_secret = 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
+    gdrive_trash_only = true

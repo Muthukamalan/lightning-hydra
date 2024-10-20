@@ -34,6 +34,7 @@ jobs:
         echo "key: ${{ env.KEY }}"
 
     - uses: actions/checkout@v4
+    - uses: iterative/setup-dvc@v1
 
     - name: Set requirements
       run: pip install -r requirements.txt
@@ -78,6 +79,8 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
+
+    - uses: iterative/setup-dvc@v1
 
     - name: Log in to the Container registry
       uses: docker/login-action@65b78e6e13532edd9afa3aa52ac7964289d1a9c1

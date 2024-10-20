@@ -77,7 +77,7 @@ def test(
         )
     else:
         log.warning("No checkpoint found! Using current model weights.")
-        test_metrics = trainer.test(model, datamodule)
+        test_metrics = trainer.test(model, datamodule,verbose=False)
     log.info(f"Test metrics:\n{test_metrics}")
 
 
