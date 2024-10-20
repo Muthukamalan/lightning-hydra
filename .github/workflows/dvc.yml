@@ -1,18 +1,14 @@
-jobs:
-  test:
+# name of my workflow
+name: DVC pipeline
 
 # events 
 on:
-  # push to main
+  # push to dvc
   push:
     branches: [ "dvc" ]
 
-
 permissions:
   contents: read
-
-
-
 
 env:
   REGISTRY: ghcr.io
